@@ -44,7 +44,7 @@ ENV PATH="$VIRTUALENV/bin:$PATH"
 COPY --from=builder /home/flaskdev/dist/page_tracker*.whl /home/flaskdev
 
 RUN python -m pip install --upgrade setuptools && \
-    python -m pip install --no-cache-dir page_trackerl*.whl
+    python -m pip install --no-cache-dir page_tracker*.whl
 
 CMD ["flask", "--app", "page_tracker.app", "run", \
      "--host", "0.0.0.0", "--port", "5000"]
